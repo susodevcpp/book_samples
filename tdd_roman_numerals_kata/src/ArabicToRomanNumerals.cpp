@@ -1,9 +1,11 @@
 #include "ArabicToRomanNumerals.h"
+#include <sstream>
 
 std::string ArabicToRomanNumerals::convert(unsigned int arabicNumber) {
-  std::string romanNumeral = "I";
-  if (arabicNumber == 2) {
-    romanNumeral = "II";
+  std::stringstream romanNumeral;
+  while (arabicNumber >= 1) {
+    romanNumeral << "I";
+    arabicNumber--;
   }
-  return romanNumeral;
+  return romanNumeral.str();
 }

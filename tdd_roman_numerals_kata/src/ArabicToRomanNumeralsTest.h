@@ -12,12 +12,17 @@ public:
   void givenArabicNumber1_convert_returnsI() {
     ArabicToRomanNumerals unitUnderTest;
     ASSERT_EQUAL("I", unitUnderTest.convert(1));
-  };
+  }
 
   void givenArabicNumber2_convert_returnsII() {
     ArabicToRomanNumerals unitUnderTest;
     ASSERT_EQUAL("II", unitUnderTest.convert(2));
-  };
+  }
+
+  void givenArabicNumber3_convert_returnsIII() {
+    ArabicToRomanNumerals unitUnderTest;
+    ASSERT_EQUAL("III", unitUnderTest.convert(3));
+  }
 };
 
 #endif
