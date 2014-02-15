@@ -13,6 +13,11 @@ public:
     ArabicToRomanNumerals unitUnderTest;
     ASSERT_EQUAL("I", unitUnderTest.convert(1));
   };
+
+  void givenArabicNumber2_convert_returnsII() {
+    ArabicToRomanNumerals unitUnderTest;
+    ASSERT_EQUAL("II", unitUnderTest.convert(2));
+  };
 };
 
 #endif
