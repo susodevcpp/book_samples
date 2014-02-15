@@ -4,44 +4,39 @@
 #include "cute.h"
 #include "ArabicToRomanNumerals.h"
 
+class ArabicToRomanNumeralsConversionAssert {
+private:
+  const unsigned int arabicNumber;
+
+public:
+  ArabicToRomanNumeralsConversionAssert(const unsigned int arabicNumber) :
+    arabicNumber(arabicNumber) {
+  }
+  
+  void isConvertedToRomanNumeral(const std::string& expectedRomanNumeral) {
+    ArabicToRomanNumerals unitUnderTest;
+    ASSERT_EQUAL(expectedRomanNumeral, unitUnderTest.convert(arabicNumber));
+  }
+};
+
+ArabicToRomanNumeralsConversionAssert assertThat(const unsigned int arabicNumber) {
+  ArabicToRomanNumeralsConversionAssert assert(arabicNumber);
+  return assert;
+};
+
 class ArabicToRomanNumeralsTest {
 public:
   ArabicToRomanNumeralsTest() {
   }
 
-  void givenArabicNumber1_convert_returnsI() {
-    ArabicToRomanNumerals unitUnderTest;
-    ASSERT_EQUAL("I", unitUnderTest.convert(1));
-  }
-
-  void givenArabicNumber2_convert_returnsII() {
-    ArabicToRomanNumerals unitUnderTest;
-    ASSERT_EQUAL("II", unitUnderTest.convert(2));
-  }
-
-  void givenArabicNumber3_convert_returnsIII() {
-    ArabicToRomanNumerals unitUnderTest;
-    ASSERT_EQUAL("III", unitUnderTest.convert(3));
-  }
-
-  void givenArabicNumber10_convert_returnsX() {
-    ArabicToRomanNumerals unitUnderTest;
-    ASSERT_EQUAL("X", unitUnderTest.convert(10));
-  }
-
-  void givenArabicNumber20_convert_returnsXX() {
-    ArabicToRomanNumerals unitUnderTest;
-    ASSERT_EQUAL("XX", unitUnderTest.convert(20));
-  }
-
-  void givenArabicNumber30_convert_returnsXXX() {
-    ArabicToRomanNumerals unitUnderTest;
-    ASSERT_EQUAL("XXX", unitUnderTest.convert(30));
-  }
-
-  void givenArabicNumber33_convert_returnsXXXIII() {
-    ArabicToRomanNumerals unitUnderTest;
-    ASSERT_EQUAL("XXXIII", unitUnderTest.convert(33));
+  void execute() {
+    assertThat(1).isConvertedToRomanNumeral("I");
+    assertThat(2).isConvertedToRomanNumeral("II");
+    assertThat(3).isConvertedToRomanNumeral("III");
+    assertThat(10).isConvertedToRomanNumeral("X");
+    assertThat(20).isConvertedToRomanNumeral("XX");
+    assertThat(30).isConvertedToRomanNumeral("XXX");
+    assertThat(33).isConvertedToRomanNumeral("XXXIII");
   }
 };
 
