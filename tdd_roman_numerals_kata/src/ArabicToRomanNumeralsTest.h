@@ -38,6 +38,11 @@ public:
     ArabicToRomanNumerals unitUnderTest;
     ASSERT_EQUAL("XXX", unitUnderTest.convert(30));
   }
+
+  void givenArabicNumber33_convert_returnsXXXIII() {
+    ArabicToRomanNumerals unitUnderTest;
+    ASSERT_EQUAL("XXXIII", unitUnderTest.convert(33));
+  }
 };
 
 #endif
