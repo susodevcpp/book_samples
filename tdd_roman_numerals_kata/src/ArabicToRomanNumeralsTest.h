@@ -28,6 +28,16 @@ public:
     ArabicToRomanNumerals unitUnderTest;
     ASSERT_EQUAL("X", unitUnderTest.convert(10));
   }
+
+  void givenArabicNumber20_convert_returnsXX() {
+    ArabicToRomanNumerals unitUnderTest;
+    ASSERT_EQUAL("XX", unitUnderTest.convert(20));
+  }
+
+  void givenArabicNumber30_convert_returnsXXX() {
+    ArabicToRomanNumerals unitUnderTest;
+    ASSERT_EQUAL("XXX", unitUnderTest.convert(30));
+  }
 };
 
 #endif
