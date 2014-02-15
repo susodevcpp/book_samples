@@ -11,6 +11,7 @@ void addTestCasesToSuite(cute::suite& testSuite) {
   testSuite += CUTE_SMEMFUN(ArabicToRomanNumeralsTest, givenArabicNumber1_convert_returnsI);
   testSuite += CUTE_SMEMFUN(ArabicToRomanNumeralsTest, givenArabicNumber2_convert_returnsII);
   testSuite += CUTE_SMEMFUN(ArabicToRomanNumeralsTest, givenArabicNumber3_convert_returnsIII);
+  testSuite += CUTE_SMEMFUN(ArabicToRomanNumeralsTest, givenArabicNumber10_convert_returnsX);
 }
 
 int runTestSuite(int argc, char* argv[]) {
