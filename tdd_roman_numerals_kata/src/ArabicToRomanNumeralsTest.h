@@ -37,6 +37,7 @@ public:
     assertThat(20).isConvertedToRomanNumeral("XX");
     assertThat(30).isConvertedToRomanNumeral("XXX");
     assertThat(33).isConvertedToRomanNumeral("XXXIII");
+    assertThat(100).isConvertedToRomanNumeral("C");
   }
 };
 
