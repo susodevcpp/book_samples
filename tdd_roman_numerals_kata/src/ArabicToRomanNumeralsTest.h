@@ -8,6 +8,11 @@ class ArabicToRomanNumeralsTest {
 public:
   ArabicToRomanNumeralsTest() {
   }
+
+  void givenArabicNumber1_convert_returnsI() {
+    ArabicToRomanNumerals unitUnderTest;
+    ASSERT_EQUAL("I", unitUnderTest.convert(1));
+  };
 };
 
 #endif
