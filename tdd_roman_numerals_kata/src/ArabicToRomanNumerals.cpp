@@ -1,11 +1,16 @@
 #include "ArabicToRomanNumerals.h"
 #include <sstream>
 
+ArabicToRomanNumerals::Digits ArabicToRomanNumerals::digits =
+{
+  { 100, "C"},
+};
+
 std::string ArabicToRomanNumerals::convert(unsigned int arabicNumber) {
   std::stringstream romanNumeral;
-  while (arabicNumber >= 100) {
-    romanNumeral << "C";
-    arabicNumber -= 100;
+  while (arabicNumber >= digits[0].arabicNumber) {
+    romanNumeral << digits[0].romanDigit;
+    arabicNumber -= digits[0].arabicNumber;
   }
   while (arabicNumber >= 10) {
     romanNumeral << "X";

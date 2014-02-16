@@ -2,10 +2,20 @@
 #define ARABIC_TO_ROMAN_NUMERALS_H_
 
 #include <string>
+#include <vector>
 
 class ArabicToRomanNumerals {
 public:
   std::string convert(unsigned int arabicNumber);
+
+private:
+  struct ArabicToNumeralDigit {
+    unsigned int arabicNumber;
+    std::string romanDigit;
+  };
+
+  typedef std::vector<ArabicToNumeralDigit> Digits;
+  static Digits digits;
 };
 
 #endif
