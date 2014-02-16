@@ -10,6 +10,8 @@ typedef cute::counting_listener<cute::ostream_listener <cute::null_listener> > T
 void addTestCasesToSuite(cute::suite& testSuite) {
   testSuite += CUTE_SMEMFUN(ArabicToRomanNumeralsTest,
     givenAnArabicNumber_convert_returnsCorrectRomanNumeral);
+  testSuite += CUTE_SMEMFUN(ArabicToRomanNumeralsTest,
+    givenAnArabicNumberGreaterThan4999_convert_throwsAnException);
 }
 
 int runTestSuite(int argc, char* argv[]) {

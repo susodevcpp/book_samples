@@ -9,6 +9,8 @@ public:
   std::string convert(unsigned int arabicNumber);
 
 private:
+  static const unsigned int MAX_SUPPORTED_ARABIC_NUMBER;
+
   struct ArabicToNumeralDigit {
     unsigned int arabicNumber;
     std::string romanDigit;
