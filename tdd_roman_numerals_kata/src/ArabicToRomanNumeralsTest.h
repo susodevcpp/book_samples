@@ -13,7 +13,7 @@ public:
     arabicNumber(arabicNumber) {
   }
   
-  void isConvertedToRomanNumeral(const std::string& expectedRomanNumeral) {
+  void isConvertedToRomanNumeral(const std::string& expectedRomanNumeral) const {
     ArabicToRomanNumerals unitUnderTest;
     ASSERT_EQUAL(expectedRomanNumeral, unitUnderTest.convert(arabicNumber));
   }
@@ -33,13 +33,18 @@ public:
     assertThat(1).isConvertedToRomanNumeral("I");
     assertThat(2).isConvertedToRomanNumeral("II");
     assertThat(3).isConvertedToRomanNumeral("III");
+    assertThat(4).isConvertedToRomanNumeral("IV");
+    assertThat(5).isConvertedToRomanNumeral("V");
+    assertThat(6).isConvertedToRomanNumeral("VI");
     assertThat(10).isConvertedToRomanNumeral("X");
     assertThat(20).isConvertedToRomanNumeral("XX");
     assertThat(30).isConvertedToRomanNumeral("XXX");
     assertThat(33).isConvertedToRomanNumeral("XXXIII");
+    assertThat(37).isConvertedToRomanNumeral("XXXVII");
     assertThat(100).isConvertedToRomanNumeral("C");
     assertThat(200).isConvertedToRomanNumeral("CC");
     assertThat(300).isConvertedToRomanNumeral("CCC");
+    assertThat(333).isConvertedToRomanNumeral("CCCXXXIII");
   }
 };
 
