@@ -3,22 +3,18 @@
 
 ArabicToRomanNumerals::Digits ArabicToRomanNumerals::digits =
 {
-  { 100, "C"},
+  { 100, "C" },
+  { 10, "X" },
+  { 1, "I" }
 };
 
 std::string ArabicToRomanNumerals::convert(unsigned int arabicNumber) {
   std::stringstream romanNumeral;
-  while (arabicNumber >= digits[0].arabicNumber) {
-    romanNumeral << digits[0].romanDigit;
-    arabicNumber -= digits[0].arabicNumber;
-  }
-  while (arabicNumber >= 10) {
-    romanNumeral << "X";
-    arabicNumber -= 10;
-  }
-  while (arabicNumber >= 1) {
-    romanNumeral << "I";
-    arabicNumber--;
+  for (Digits::size_type index = 0; index != digits.size(); ++index) {
+    while (arabicNumber >= digits[index].arabicNumber) {
+      romanNumeral << digits[index].romanDigit;
+      arabicNumber -= digits[index].arabicNumber;
+    }
   }
   return romanNumeral.str();
 }

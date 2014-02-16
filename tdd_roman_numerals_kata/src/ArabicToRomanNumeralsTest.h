@@ -29,7 +29,7 @@ public:
   ArabicToRomanNumeralsTest() {
   }
 
-  void execute() {
+  void givenAnArabicNumber_convert_returnsCorrectRomanNumeral() {
     assertThat(1).isConvertedToRomanNumeral("I");
     assertThat(2).isConvertedToRomanNumeral("II");
     assertThat(3).isConvertedToRomanNumeral("III");
@@ -38,6 +38,8 @@ public:
     assertThat(30).isConvertedToRomanNumeral("XXX");
     assertThat(33).isConvertedToRomanNumeral("XXXIII");
     assertThat(100).isConvertedToRomanNumeral("C");
+    assertThat(200).isConvertedToRomanNumeral("CC");
+    assertThat(300).isConvertedToRomanNumeral("CCC");
   }
 };
 
