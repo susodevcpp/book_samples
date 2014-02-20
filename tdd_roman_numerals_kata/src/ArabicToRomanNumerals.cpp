@@ -20,11 +20,18 @@ ArabicToRomanNumerals::Digits ArabicToRomanNumerals::digits =
   { 1, "I" }
 };
 
-std::string ArabicToRomanNumerals::convert(unsigned int arabicNumber) {
+std::string ArabicToRomanNumerals::convert(unsigned int arabicNumber) const {
+  checkParameter(arabicNumber);
+  return performConversion(arabicNumber);
+}
+
+void ArabicToRomanNumerals::checkParameter(const unsigned int arabicNumber) const {
   if (arabicNumber > MAX_SUPPORTED_ARABIC_NUMBER) {
     throw std::invalid_argument("arabicNumber");
   }
+}
 
+std::string ArabicToRomanNumerals::performConversion(unsigned int arabicNumber) const {
   std::stringstream romanNumeral;
   for (Digits::size_type index = 0; index != digits.size(); ++index) {
     while (arabicNumber >= digits[index].arabicNumber) {
@@ -32,6 +39,5 @@ std::string ArabicToRomanNumerals::convert(unsigned int arabicNumber) {
       arabicNumber -= digits[index].arabicNumber;
     }
   }
-
   return romanNumeral.str();
 }

@@ -6,7 +6,7 @@
 
 class ArabicToRomanNumerals {
 public:
-  std::string convert(unsigned int arabicNumber);
+  std::string convert(unsigned int arabicNumber) const;
 
 private:
   static const unsigned int MAX_SUPPORTED_ARABIC_NUMBER;
@@ -18,6 +18,9 @@ private:
 
   typedef std::vector<ArabicToNumeralDigit> Digits;
   static Digits digits;
+
+  void checkParameter(const unsigned int arabicNumber) const;
+  std::string performConversion(unsigned int arabicNumber) const;
 };
 
 #endif
